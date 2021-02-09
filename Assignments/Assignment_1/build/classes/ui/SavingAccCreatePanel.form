@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <Properties>
+    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+      <Color blue="fb" green="e5" red="f6" type="rgb"/>
+    </Property>
+  </Properties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="BankName" alignment="0" max="32767" attributes="0"/>
+                          <Component id="RoutingNumber" alignment="0" max="32767" attributes="0"/>
+                          <Component id="AccNo" alignment="0" max="32767" attributes="0"/>
+                          <Component id="BankBalance" alignment="0" max="32767" attributes="0"/>
+                          <Component id="AccType" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="RoutingNumberInput" alignment="0" pref="198" max="32767" attributes="0"/>
+                              <Component id="BankNameInput" alignment="0" max="32767" attributes="0"/>
+                              <Component id="AccNoInput" alignment="1" max="32767" attributes="0"/>
+                              <Component id="bankBalanceInput" alignment="1" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="SavingAcc" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="CheckingAcc" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="129" max="-2" attributes="0"/>
+                      <Component id="SaveButton" min="-2" pref="110" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="SavingAccount" alignment="0" min="-2" pref="357" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="31" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="SavingAccount" min="-2" pref="27" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="BankName" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                  <Component id="BankNameInput" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="RoutingNumber" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                  <Component id="RoutingNumberInput" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="AccNo" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                  <Component id="AccNoInput" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="BankBalance" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                  <Component id="bankBalanceInput" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="AccType" min="-2" pref="29" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="SavingAcc" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="CheckingAcc" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="SaveButton" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="44" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="SavingAccount">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+        <Property name="text" type="java.lang.String" value="Input Account Details"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="BankName">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Bank Name :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="RoutingNumber">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Bank Routing Number :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="AccNo">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Bank Account Number :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="BankBalance">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Bank Balance :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="AccType">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Account Type :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="BankNameInput">
+    </Component>
+    <Component class="javax.swing.JTextField" name="RoutingNumberInput">
+    </Component>
+    <Component class="javax.swing.JTextField" name="AccNoInput">
+    </Component>
+    <Component class="javax.swing.JTextField" name="bankBalanceInput">
+    </Component>
+    <Component class="javax.swing.JButton" name="SaveButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="SAVE"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SaveButtonActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="SavingAcc">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Saving Account"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SavingAccActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="CheckingAcc">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Checking Account"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CheckingAccActionPerformed"/>
+      </Events>
+    </Component>
+  </SubComponents>
+</Form>

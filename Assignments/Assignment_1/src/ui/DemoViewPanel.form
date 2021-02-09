@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+              <Component id="jLabel1" min="-2" pref="350" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                      <Component id="FirstName" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="SSN" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="LastName" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="Weight" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="DOB" min="-2" max="-2" attributes="0"/>
+                  <Component id="Height" min="-2" max="-2" attributes="0"/>
+                  <Component id="Age" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="PhoneNo" alignment="0" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="65" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="DOBInput" alignment="0" pref="167" max="32767" attributes="0"/>
+                          <Component id="HeightInput" max="32767" attributes="0"/>
+                      </Group>
+                      <Component id="SSNInput" alignment="0" min="-2" pref="167" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="WeightInput" min="-2" pref="167" max="-2" attributes="0"/>
+                  <Component id="AgeInput" min="-2" pref="167" max="-2" attributes="0"/>
+                  <Component id="LastNameInput" min="-2" pref="167" max="-2" attributes="0"/>
+                  <Component id="FirstNameInput" min="-2" pref="167" max="-2" attributes="0"/>
+                  <Component id="PhoneNumberInput" min="-2" pref="167" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+              <Component id="jLabel1" min="-2" pref="26" max="-2" attributes="0"/>
+              <EmptySpace pref="23" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="FirstNameInput" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="LastNameInput" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="FirstName" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="LastName" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="PhoneNo" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="PhoneNumberInput" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="AgeInput" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="Age" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="DOBInput" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="DOB" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="HeightInput" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="Height" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="Weight" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="WeightInput" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="SSN" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="SSNInput" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+        <Property name="text" type="java.lang.String" value="View Demographic Details"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="FirstName">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="First Name :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="LastName">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Last Name :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="PhoneNo">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Phone Number :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="DOB">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Date of Birth :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="Age">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Age :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="Height">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Height :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="Weight">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Weight :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="SSN">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Social Security Number :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="FirstNameInput">
+    </Component>
+    <Component class="javax.swing.JTextField" name="LastNameInput">
+    </Component>
+    <Component class="javax.swing.JTextField" name="PhoneNumberInput">
+    </Component>
+    <Component class="javax.swing.JTextField" name="DOBInput">
+    </Component>
+    <Component class="javax.swing.JTextField" name="AgeInput">
+    </Component>
+    <Component class="javax.swing.JTextField" name="HeightInput">
+    </Component>
+    <Component class="javax.swing.JTextField" name="WeightInput">
+    </Component>
+    <Component class="javax.swing.JTextField" name="SSNInput">
+    </Component>
+  </SubComponents>
+</Form>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="DrivingLicense" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+          <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="expiryDate" alignment="1" max="32767" attributes="0"/>
+                      <Component id="LicenseNo" alignment="0" max="32767" attributes="0"/>
+                      <Component id="issuedDate" alignment="0" max="32767" attributes="0"/>
+                      <Component id="bloodType" alignment="0" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="LicenseNumberInput" alignment="0" max="32767" attributes="0"/>
+                      <Component id="issueddateInput" alignment="0" max="32767" attributes="0"/>
+                      <Component id="expiryDateInput" alignment="0" max="32767" attributes="0"/>
+                      <Component id="bloodTypeInput" alignment="0" pref="152" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="54" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+              <Component id="DrivingLicense" min="-2" pref="37" max="-2" attributes="0"/>
+              <EmptySpace pref="229" max="32767" attributes="0"/>
+          </Group>
+          <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="103" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="LicenseNo" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
+                      <Component id="LicenseNumberInput" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="issueddateInput" alignment="0" pref="28" max="32767" attributes="0"/>
+                      <Component id="issuedDate" alignment="0" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="expiryDate" alignment="0" min="-2" pref="23" max="-2" attributes="0"/>
+                      <Component id="expiryDateInput" alignment="0" min="-2" pref="23" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="bloodType" alignment="0" min="-2" pref="27" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="bloodTypeInput" max="32767" attributes="0"/>
+                          <EmptySpace min="4" pref="4" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace pref="60" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="DrivingLicense">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+        <Property name="text" type="java.lang.String" value="Input Driving License Details"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="LicenseNo">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="License Number :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="issuedDate">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Issued Date :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="expiryDate">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Expiry Date :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="bloodType">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Blood Type :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="LicenseNumberInput">
+    </Component>
+    <Component class="javax.swing.JTextField" name="issueddateInput">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="issueddateInputActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="expiryDateInput">
+    </Component>
+    <Component class="javax.swing.JTextField" name="bloodTypeInput">
+    </Component>
+  </SubComponents>
+</Form>

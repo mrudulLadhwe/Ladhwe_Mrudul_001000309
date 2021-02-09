@@ -1,0 +1,840 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <Properties>
+    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+      <Color blue="fb" green="e5" red="f6" type="rgb"/>
+    </Property>
+  </Properties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jPanel3" min="-2" pref="314" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="CheckingAccount" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="AccType1" min="-2" pref="117" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="accTypeInput1" min="-2" pref="156" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="BankBalance1" min="-2" pref="117" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="bankBalanceInput1" min="-2" pref="156" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="AccNo1" min="-2" pref="131" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="AccNoInput1" min="-2" pref="156" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="RoutingNumber1" min="-2" pref="117" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="RoutingNumberInput1" min="-2" pref="156" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="BankName1" min="-2" pref="117" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="BankNameInput1" min="-2" pref="155" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+              <Component id="jPanel6" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="107" max="-2" attributes="0"/>
+              <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" attributes="0">
+              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                      <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jPanel6" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+                      <Component id="CheckingAccount" min="-2" pref="37" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="BankName1" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                          <Component id="BankNameInput1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="RoutingNumber1" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                          <Component id="RoutingNumberInput1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="AccNo1" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                          <Component id="AccNoInput1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="BankBalance1" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                          <Component id="bankBalanceInput1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="accTypeInput1" min="-2" max="-2" attributes="0"/>
+                          <Component id="AccType1" min="-2" pref="29" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace pref="778" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JPanel" name="jPanel1">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="fb" green="e5" red="f6" type="rgb"/>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="ViewDemo" min="-2" pref="316" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="FirstName" alignment="0" min="-2" pref="103" max="-2" attributes="0"/>
+                              <Component id="LastName" alignment="0" min="-2" pref="103" max="-2" attributes="0"/>
+                              <Component id="PhoneNo" alignment="0" min="-2" pref="121" max="-2" attributes="0"/>
+                              <Component id="DOB" alignment="0" min="-2" pref="121" max="-2" attributes="0"/>
+                              <Component id="Age" alignment="0" min="-2" pref="121" max="-2" attributes="0"/>
+                              <Component id="Height" alignment="0" min="-2" pref="121" max="-2" attributes="0"/>
+                              <Component id="Weight" alignment="0" min="-2" pref="121" max="-2" attributes="0"/>
+                              <Component id="SSN" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="SSNInput" min="-2" pref="165" max="-2" attributes="0"/>
+                              <Component id="PhoneNumberInput" min="-2" pref="165" max="-2" attributes="0"/>
+                              <Component id="WeightInput" alignment="0" min="-2" pref="165" max="-2" attributes="0"/>
+                              <Component id="DOBInput" alignment="0" min="-2" pref="165" max="-2" attributes="0"/>
+                              <Component id="HeightInput" alignment="0" min="-2" pref="165" max="-2" attributes="0"/>
+                              <Component id="AgeInput" alignment="0" min="-2" pref="165" max="-2" attributes="0"/>
+                              <Component id="LastNameInput" alignment="0" min="-2" pref="165" max="-2" attributes="0"/>
+                              <Component id="FirstNameInput" min="-2" pref="165" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                  <Component id="jPanel2" min="-2" pref="326" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="jPanel5" min="-2" pref="409" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="ViewDemo" min="-2" pref="53" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="FirstName" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
+                                      <Component id="FirstNameInput" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="LastName" alignment="3" min="-2" pref="21" max="-2" attributes="0"/>
+                                      <Component id="LastNameInput" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="PhoneNo" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                                      <Component id="AgeInput" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="DOB" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                                      <Component id="HeightInput" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="Age" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
+                                      <Component id="DOBInput" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="Height" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="WeightInput" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="Weight" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
+                              <Component id="SSNInput" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="SSN" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                              <Component id="PhoneNumberInput" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Component id="jPanel5" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="0" pref="16" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="FirstName">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="First Name :"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="LastName">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Last Name :"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="PhoneNo">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Phone Number :"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="DOB">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Date of Birth :"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="Age">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Age :"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="Height">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Height :"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="Weight">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Weight :"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="SSN">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Social Security Number :"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="FirstNameInput">
+        </Component>
+        <Component class="javax.swing.JTextField" name="LastNameInput">
+        </Component>
+        <Component class="javax.swing.JTextField" name="PhoneNumberInput">
+        </Component>
+        <Component class="javax.swing.JTextField" name="DOBInput">
+        </Component>
+        <Component class="javax.swing.JTextField" name="AgeInput">
+        </Component>
+        <Component class="javax.swing.JTextField" name="HeightInput">
+        </Component>
+        <Component class="javax.swing.JTextField" name="WeightInput">
+        </Component>
+        <Component class="javax.swing.JTextField" name="SSNInput">
+        </Component>
+        <Component class="javax.swing.JLabel" name="ViewDemo">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="fb" green="e5" red="f6" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="12" style="1"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="View Demographic Details"/>
+          </Properties>
+        </Component>
+        <Container class="javax.swing.JPanel" name="jPanel2">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="fb" green="e5" red="f6" type="rgb"/>
+            </Property>
+          </Properties>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
+                                      <Component id="StreetAddress" min="-2" pref="87" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="CityInput" min="-2" pref="165" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="State" max="32767" attributes="0"/>
+                                          <Component id="ZipCode" pref="87" max="32767" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="StateInput" min="-2" pref="165" max="-2" attributes="0"/>
+                                          <Component id="ZipCodeInput" min="-2" pref="165" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="City" min="-2" pref="92" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="StreetAddressInput" min="-2" pref="165" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="AddressInfo" min="-2" pref="325" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="AddressInfo" min="-2" pref="29" max="-2" attributes="0"/>
+                      <EmptySpace pref="41" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="StreetAddressInput" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="City" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="StreetAddress" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                          <Component id="CityInput" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="State" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                          <Component id="StateInput" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="ZipCodeInput" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ZipCode" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="AddressInfo">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="12" style="1"/>
+                </Property>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="text" type="java.lang.String" value="Address Information"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="StreetAddress">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="City :"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="City">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Street Address :"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="State">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="State :"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="ZipCode">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Zip Code :"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="CityInput">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CityInputActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="StreetAddressInput">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="StreetAddressInputActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="ZipCodeInput">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ZipCodeInputActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="StateInput">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="StateInputActionPerformed"/>
+              </Events>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="jPanel5">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="fb" green="e5" red="f6" type="rgb"/>
+            </Property>
+          </Properties>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="LicenseNo" min="-2" pref="86" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="LicenseNumberInput" min="-2" pref="152" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="bloodType" min="-2" pref="86" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="bloodTypeInput" min="-2" pref="152" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="expiryDate" min="-2" pref="86" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="expiryDateInput" min="-2" pref="152" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="issuedDate" min="-2" pref="86" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="issueddateInput" min="-2" pref="152" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="DrivingLicense" min="-2" pref="421" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="DrivingLicense" min="-2" pref="37" max="-2" attributes="0"/>
+                      <EmptySpace pref="19" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="LicenseNumberInput" min="-2" pref="24" max="-2" attributes="0"/>
+                          <Component id="LicenseNo" min="-2" pref="24" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="issuedDate" min="-2" pref="28" max="-2" attributes="0"/>
+                          <Component id="issueddateInput" min="-2" pref="23" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="expiryDate" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
+                          <Component id="expiryDateInput" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="bloodType" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                          <Component id="bloodTypeInput" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="0" pref="26" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="DrivingLicense">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="12" style="1"/>
+                </Property>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="text" type="java.lang.String" value="Input Driving License Details"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="LicenseNo">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="License Number :"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="issuedDate">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Issued Date :"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="expiryDate">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Expiry Date :"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="bloodType">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Blood Type :"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="LicenseNumberInput">
+            </Component>
+            <Component class="javax.swing.JTextField" name="issueddateInput">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="issueddateInputActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="expiryDateInput">
+            </Component>
+            <Component class="javax.swing.JTextField" name="bloodTypeInput">
+            </Component>
+          </SubComponents>
+        </Container>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="jPanel3">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="fb" green="e5" red="f6" type="rgb"/>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                      <Component id="SavingAccount" alignment="0" max="32767" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="BankName" alignment="0" max="32767" attributes="0"/>
+                              <Component id="RoutingNumber" alignment="0" max="32767" attributes="0"/>
+                              <Component id="AccNo" alignment="0" max="32767" attributes="0"/>
+                              <Component id="BankBalance" alignment="0" max="32767" attributes="0"/>
+                              <Component id="AccType" alignment="0" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="bankBalanceInput" alignment="0" pref="151" max="32767" attributes="0"/>
+                              <Component id="AccNoInput" alignment="0" max="32767" attributes="0"/>
+                              <Component id="RoutingNumberInput" alignment="0" max="32767" attributes="0"/>
+                              <Component id="BankNameInput" alignment="0" max="32767" attributes="0"/>
+                              <Component id="accTypeInput" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="98" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <Component id="SavingAccount" min="-2" pref="34" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="BankName" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                      <Component id="BankNameInput" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="RoutingNumber" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                      <Component id="RoutingNumberInput" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="AccNo" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                      <Component id="AccNoInput" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="BankBalance" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                      <Component id="bankBalanceInput" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="AccType" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                      <Component id="accTypeInput" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="19" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="SavingAccount">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="12" style="1"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="Saving Account Details"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="BankName">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Bank Name :"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="RoutingNumber">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Bank Routing Number :"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="AccNo">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Bank Account Number :"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="BankBalance">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Bank Balance :"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="AccType">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Account Type :"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="BankNameInput">
+        </Component>
+        <Component class="javax.swing.JTextField" name="RoutingNumberInput">
+        </Component>
+        <Component class="javax.swing.JTextField" name="AccNoInput">
+        </Component>
+        <Component class="javax.swing.JTextField" name="bankBalanceInput">
+        </Component>
+        <Component class="javax.swing.JTextField" name="accTypeInput">
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="jPanel4">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="fb" green="e5" red="f6" type="rgb"/>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="0" pref="863" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="0" pref="287" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+    </Container>
+    <Component class="javax.swing.JLabel" name="CheckingAccount">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+        <Property name="text" type="java.lang.String" value="Checking Account Details"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="BankName1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Bank Name :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="BankNameInput1">
+    </Component>
+    <Component class="javax.swing.JLabel" name="RoutingNumber1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Bank Routing Number :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="AccNo1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Bank Account Number :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="BankBalance1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Bank Balance :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="AccType1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Account Type :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="RoutingNumberInput1">
+    </Component>
+    <Component class="javax.swing.JTextField" name="AccNoInput1">
+    </Component>
+    <Component class="javax.swing.JTextField" name="bankBalanceInput1">
+    </Component>
+    <Component class="javax.swing.JTextField" name="accTypeInput1">
+    </Component>
+    <Container class="javax.swing.JPanel" name="jPanel6">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="fb" green="e5" red="f6" type="rgb"/>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="0" pref="353" max="32767" attributes="0"/>
+              <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace pref="25" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="recordNo" alignment="0" min="-2" pref="98" max="-2" attributes="0"/>
+                                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                      <Component id="allergy3" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="allergy2" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="allergy1" alignment="0" pref="88" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="recordNoInput" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="allergy1Input" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="allergy2Input" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="allergy3Input" alignment="0" pref="152" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Component id="medicalRecord" alignment="0" min="-2" pref="318" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="0" pref="229" max="32767" attributes="0"/>
+              <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="medicalRecord" min="-2" pref="31" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="recordNo" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                          <Component id="recordNoInput" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="allergy1" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+                          <Component id="allergy1Input" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="allergy2" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="allergy2Input" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="allergy3" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                          <Component id="allergy3Input" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="22" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="medicalRecord">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="12" style="1"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="Input Medical Record"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="recordNo">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Record Number :"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="allergy1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Allergy 1 :"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="allergy2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Allergy 2 :"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="allergy3">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Allergy 3:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="recordNoInput">
+        </Component>
+        <Component class="javax.swing.JTextField" name="allergy1Input">
+        </Component>
+        <Component class="javax.swing.JTextField" name="allergy2Input">
+        </Component>
+        <Component class="javax.swing.JTextField" name="allergy3Input">
+        </Component>
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>
