@@ -19,7 +19,6 @@ public class Assignment22 {
     public static void main(String[] args) {
         // TODO code application logic here
         Patient p = new Patient();
-        Patient pa = new Patient();
         Scanner sc = new Scanner(System.in);
         char con;
         int choice;
@@ -30,7 +29,6 @@ public class Assignment22 {
             System.out.println("2. Display the patient data.");
             System.out.println("3. Display the patient current record.");
             System.out.println("4. Check if vital sign value is normal.");
-            System.out.println("5. Display test cases");
             System.out.println("Enter your choice :");
             choice = sc.nextInt();
             String firstName;
@@ -123,49 +121,6 @@ public class Assignment22 {
                     }else{
                         System.out.println("Parameter not found");
                     }
-                    break;
-                case 5:
-                    pa.setFirstName("Ross");
-                    pa.setLastName("Geller");
-                    pa.setAgeM(0);
-                    pa.setAgeY(47);
-                    pa.vital.newVitalSign(18, 65, 115, 159, 72);
-                    pa.vital.newVitalSign(17, 70, 115, 159, 72);
-                    pa.vital.newVitalSign(20, 90, 115, 159, 72);
-                    System.out.println("Display all history>>>>>");
-                    pa.displayDetails();
-                    System.out.println();
-                    System.out.println("Display current record>>>>>");
-                    pa.displayCurrentRecord();
-                    System.out.println();
-                    
-                    String str = "ECG";
-                    if((str.equalsIgnoreCase("Respiratory Rate")) || (str.equalsIgnoreCase("Heart Rate"))
-                        || (str.equalsIgnoreCase("Blood Pressure")) || (str.equalsIgnoreCase("Weight"))){
-                        System.out.println("Is vital sign normal :" + 
-                                   pa.isThisVitalSignNormal(str, 0, 40, 23));
-                    }else{
-                        System.out.println("Parameter not found");
-                    }
-                    
-                    String str2= "Heart Rate";
-                    if((str2.equalsIgnoreCase("Respiratory Rate")) || (str2.equalsIgnoreCase("Heart Rate"))
-                        || (str2.equalsIgnoreCase("Blood Pressure")) || (str2.equalsIgnoreCase("Weight"))){
-                        System.out.println("Is vital sign normal :" + 
-                                   pa.isThisVitalSignNormal(str2, 0, 11, 80));
-                    }else{
-                        System.out.println("Parameter not found");
-                    }
-                    
-                    String str3= "Heart Rate";
-                    if((str3.equalsIgnoreCase("Respiratory Rate")) || (str3.equalsIgnoreCase("Heart Rate"))
-                        || (str3.equalsIgnoreCase("Blood Pressure")) || (str3.equalsIgnoreCase("Weight"))){
-                        System.out.println("Is vital sign normal :" + 
-                                   pa.isThisVitalSignNormal(str3, 0, 3, 65));
-                    }else{
-                        System.out.println("Parameter not found");
-                    }
-                    
                     break;
                 default:
                     System.out.println("Enter valid choice");
