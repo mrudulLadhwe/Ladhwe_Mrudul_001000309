@@ -49,4 +49,14 @@ public class UserAccountDirectory {
         }
         return true;
     }
+    
+    public UserAccount createUserAccountCustomer(String name, String username, String password, Role role){
+        UserAccount userAccount = new UserAccount();
+        userAccount.setName(name);
+        userAccount.setUsername(username);
+        userAccount.setPassword(password);
+        userAccount.setRole(role);
+        userAccountList.add(userAccount);
+        return userAccount;
+    }
 }

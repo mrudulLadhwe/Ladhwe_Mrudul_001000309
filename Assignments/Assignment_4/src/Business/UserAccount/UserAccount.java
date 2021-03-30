@@ -19,6 +19,7 @@ public class UserAccount {
     private Employee employee;
     private Role role;
     private WorkQueue workQueue;
+    private String name;
 
     public UserAccount() {
         workQueue = new WorkQueue();
@@ -67,6 +68,14 @@ public class UserAccount {
     @Override
     public String toString() {
         return username;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
     
     
