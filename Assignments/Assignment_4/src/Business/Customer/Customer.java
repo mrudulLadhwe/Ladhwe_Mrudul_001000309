@@ -11,4 +11,13 @@ package Business.Customer;
  */
 public class Customer {
     
+    String name;
+    String username;
+    String password;
+
+    public Customer(String name, String username, String password) {
+        this.name = name;
+        this.username = username;
+        this.password = password;
+    }
 }

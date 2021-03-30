@@ -4,12 +4,15 @@
  */
 package userinterface;
 
+import Business.ConfigureASystem;
 import Business.EcoSystem;
 import Business.DB4OUtil.DB4OUtil;
 
 import Business.Organization;
 import Business.UserAccount.UserAccount;
+import Business.UserAccount.UserAccountDirectory;
 import java.awt.CardLayout;
+import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -123,7 +126,25 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void loginJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginJButtonActionPerformed
         // Get user name
-       
+        ConfigureASystem cs = new ConfigureASystem();
+        EcoSystem es = cs.configure();
+        UserAccountDirectory uad = es.getUserAccountDirectory();
+        char[] pass = passwordField.getPassword();
+        String password = new String(pass);
+        UserAccount ua = uad.authenticateUser(userNameJTextField.getText(), password);
+        if(ua == null){
+            JOptionPane.showMessageDialog(null, "Invalid credentials");
+            return;
+        }else{
+            CardLayout layout=(CardLayout)container.getLayout();
+            container.add("workArea", ua.getRole().createWorkArea(container, ua, es));
+            layout.next(container);
+        }
+        
+        loginJButton.setEnabled(false);
+        logoutJButton.setEnabled(true);
+        userNameJTextField.setEnabled(false);
+        passwordField.setEnabled(false);
     }//GEN-LAST:event_loginJButtonActionPerformed
 
     private void logoutJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutJButtonActionPerformed

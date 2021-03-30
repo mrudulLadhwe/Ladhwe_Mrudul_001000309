@@ -5,10 +5,18 @@
  */
 package Business.Customer;
 
+import java.util.List;
+
 /**
  *
  * @author harold
  */
 public class CustomerDirectory {
+    
+    List<Customer> customerList;
+
+    public CustomerDirectory(List<Customer> customerList) {
+        this.customerList = customerList;
+    }
     
 }
