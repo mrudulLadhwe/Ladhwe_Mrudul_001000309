@@ -14,12 +14,14 @@ public class Customer {
     String name;
     String username;
     String password;
-    String totalOrders;
+    int totalOrders = 0;
+    String address;
 
-    public Customer(String name, String username, String password) {
+    public Customer(String name, String username, String password, String address) {
         this.name = name;
         this.username = username;
         this.password = password;
+        this.address = address;
     }
 
     public String getName() {
@@ -46,9 +48,27 @@ public class Customer {
         this.password = password;
     }
 
-    public void setTotalOrders(String totalOrders) {
+    public int getTotalOrders() {
+        return totalOrders;
+    }
+
+    public void setTotalOrders(int totalOrders) {
         this.totalOrders = totalOrders;
     }
+
+    public int newOrder(){
+        return totalOrders+1;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+    
+    
     
     
 }

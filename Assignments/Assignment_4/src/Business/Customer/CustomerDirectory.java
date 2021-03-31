@@ -24,8 +24,8 @@ public class CustomerDirectory {
         return customerList;
     }
     
-    public void createCustomer(String name, String username, String password){
-        Customer c = new Customer(name, username, password);
+    public void createCustomer(String name, String username, String password, String address){
+        Customer c = new Customer(name, username, password, address);
         customerList.add(c);
     }
     

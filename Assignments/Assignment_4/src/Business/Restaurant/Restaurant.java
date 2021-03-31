@@ -6,6 +6,8 @@
 package Business.Restaurant;
 
 import Business.Employee.Employee;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -16,11 +18,13 @@ public class Restaurant {
     String restaurentName;
     Employee restaurantManager;
     String address;
+    List<String> menu;
 
     public Restaurant(Employee restaurantManager, String restaurentName, String address) {
         this.restaurantManager = restaurantManager;
         this.restaurentName = restaurentName;
         this.address = address;
+        menu = new ArrayList<String>();
     }
 
     public Employee getRestaurantManager() {
@@ -34,5 +38,27 @@ public class Restaurant {
     public String getAddress() {
         return address;
     }
+
+    public List<String> getMenu() {
+        return menu;
+    }
+
+    public void setMenu(List<String> menu) {
+        this.menu = menu;
+    }
+
+    public void setRestaurentName(String restaurentName) {
+        this.restaurentName = restaurentName;
+    }
+
+    public void setRestaurantManager(Employee restaurantManager) {
+        this.restaurantManager = restaurantManager;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+    
+    
     
 }
