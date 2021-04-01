@@ -18,13 +18,18 @@ import java.util.Map;
  */
 public class Order {
     
+    int id = 0;
     Customer customer;
     List<OrderItem> orderItemList;
     String status = "Pending";
     Double total;
+    static int orderCnt = 1;
+    String comment;
 
     public Order() {
         orderItemList = new ArrayList<OrderItem>();
+        id = orderCnt;
+        orderCnt++;
     }
 
     public List<OrderItem> getOrderItemList() {
@@ -57,6 +62,30 @@ public class Order {
 
     public void setTotal(Double total) {
         this.total = total;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public static int getOrderCnt() {
+        return orderCnt;
+    }
+
+    public static void setOrderCnt(int orderCnt) {
+        Order.orderCnt = orderCnt;
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
     }
     
     

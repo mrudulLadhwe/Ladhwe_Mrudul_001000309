@@ -90,17 +90,17 @@ public class ManageOrderJPanel extends javax.swing.JPanel {
 
         customerTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Customer Name", "Customer Address", "Total", "Status"
+                "Customer Name", "Customer Address", "Total", "Status", "Message"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -237,7 +237,7 @@ public class ManageOrderJPanel extends javax.swing.JPanel {
         
         dm.getOrderList().add(res.getAllOrders().get(index));
         
-        System.out.println("order size>>>"+dm.getOrderList().size());
+        //System.out.println("order size>>>"+dm.getOrderList().size());
         
         if(index >= 0){
             model.setValueAt(res.getAllOrders().get(index).getStatus(), index, 3);
@@ -313,11 +313,13 @@ public class ManageOrderJPanel extends javax.swing.JPanel {
         List<Order> orderList = res.getAllOrders();
         
         for(int i = 0; i < orderList.size(); i++){
+            
             model.addRow(new Object[]{
                orderList.get(i).getCustomer().getName(),
                orderList.get(i).getCustomer().getAddress(),
                orderList.get(i).getTotal(),
-               orderList.get(i).getStatus()
+               orderList.get(i).getStatus(),
+               orderList.get(i).getComment()
             });
         }
     }

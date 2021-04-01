@@ -4,6 +4,7 @@
  */
 package userinterface.DeliveryManRole;
 
+import Business.Customer.Customer;
 import Business.DeliveryMan.DeliveryMan;
 import Business.EcoSystem;
 import Business.Order.Order;
@@ -14,6 +15,7 @@ import Business.WorkQueue.LabTestWorkRequest;
 import Business.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
 import java.util.List;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -26,7 +28,9 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
     private JPanel userProcessContainer;
     private EcoSystem business;
     private UserAccount userAccount;
-    
+    Customer c;
+    int orderId;
+    Order o;
     
     /**
      * Creates new form LabAssistantWorkAreaJPanel
@@ -49,15 +53,12 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
         List<DeliveryMan> delList = business.getDeliveryManDirectory().getDeliveryManList();
         
         for(int i = 0; i < delList.size(); i++){
-            System.out.println("for>>>");
             if(delList.get(i).getName().equals(userAccount.getName())){
-                System.out.println("if>>>"+userAccount.getName());
-                System.out.println("size>>"+delList.get(i).getOrderList().size());
                 for(int j = 0; j < delList.get(i).getOrderList().size(); j++){
-                    System.out.println("for j>>>");
+                    System.out.println("id>>>>"+delList.get(i).getOrderList().get(j).getId());
                     model.addRow(new Object[]{
-                    "holla",
-                    delList.get(i).getOrderList().get(j).getOrderItemList().get(0).getRestaurant(),
+                    delList.get(i).getOrderList().get(j).getComment(),
+                    delList.get(i).getOrderList().get(j).getOrderItemList().get(0).getRestaurant().getRestaurentName(),
                     delList.get(i).getOrderList().get(j).getCustomer().getName(),
                     delList.get(i).getOrderList().get(j).getStatus()
                     });
@@ -151,6 +152,49 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
     private void assignJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignJButtonActionPerformed
         
         int selectedRow = workRequestJTable.getSelectedRow();
+        DefaultTableModel model = (DefaultTableModel) workRequestJTable.getModel();
+        
+        List<DeliveryMan> delList = business.getDeliveryManDirectory().getDeliveryManList();
+        
+        for(int i = 0; i < delList.size(); i++){
+            if(delList.get(i).getName().equals(userAccount.getName())){
+                for(int j = 0; j < delList.get(i).getOrderList().size(); j++){
+                    if(j == selectedRow){
+                        delList.get(i).getOrderList().get(j).setStatus("Order Pick Up");
+                        orderId = delList.get(i).getOrderList().get(j).getId();
+                        if(selectedRow >= 0){
+                            model.setValueAt(delList.get(i).getOrderList().get(j).getStatus(), selectedRow, 3);
+                        }
+                    }
+                }
+            }
+        }
+        
+        for(int i = 0; i < business.getOrderDirectory().getAllOrders().size(); i++){
+            if(business.getOrderDirectory().getAllOrders().get(i).getId() == orderId){
+                business.getOrderDirectory().getAllOrders().get(i).setStatus("Order Pick Up");
+                c = business.getOrderDirectory().getAllOrders().get(i).getCustomer();
+                for(int j = 0; j < c.getAllOrders().size(); j++){
+                    if(c.getAllOrders().get(j).getId() == orderId){
+                        c.getAllOrders().get(j).setStatus("Order Pick Up");
+                    }
+                }
+            }
+        }
+        
+        for(int i = 0; i < business.getOrderDirectory().getAllOrders().size(); i++){
+            if(business.getOrderDirectory().getAllOrders().get(i).getId() == orderId){
+                Restaurant res = business.getOrderDirectory().getAllOrders().get(i).getOrderItemList().get(0).getRestaurant();
+                for(int j = 0; j < res.getAllOrders().size(); j++){
+                    if(res.getAllOrders().get(j).getId() == orderId){
+                        res.getAllOrders().get(j).setStatus("Order Pick Up");
+                    }
+                }
+            }
+        }
+        
+        JOptionPane.showMessageDialog(null, "Order Picked Up!!");
+       
 //        
 //        if (selectedRow < 0){
 //            return;
@@ -165,7 +209,48 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
 
     private void processJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_processJButtonActionPerformed
         
-//        int selectedRow = workRequestJTable.getSelectedRow();
+        int selectedRow = workRequestJTable.getSelectedRow();
+        
+        DefaultTableModel model = (DefaultTableModel) workRequestJTable.getModel();
+        
+        List<DeliveryMan> delList = business.getDeliveryManDirectory().getDeliveryManList();
+        
+        for(int i = 0; i < delList.size(); i++){
+            if(delList.get(i).getName().equals(userAccount.getName())){
+                for(int j = 0; j < delList.get(i).getOrderList().size(); j++){
+                    if(j == selectedRow){
+                        orderId = delList.get(i).getOrderList().get(j).getId();
+                        delList.get(i).getOrderList().remove(j);
+                        model.removeRow(selectedRow);
+                    }
+                }
+            }
+        }
+        
+        for(int i = 0; i < business.getOrderDirectory().getAllOrders().size(); i++){
+            if(business.getOrderDirectory().getAllOrders().get(i).getId() == orderId){
+                business.getOrderDirectory().getAllOrders().get(i).setStatus("Delivered");
+                c = business.getOrderDirectory().getAllOrders().get(i).getCustomer();
+                for(int j = 0; j < c.getAllOrders().size(); j++){
+                    if(c.getAllOrders().get(j).getId() == orderId){
+                        c.getAllOrders().get(j).setStatus("Delivered");
+                    }
+                }
+            }
+        }
+        
+        for(int i = 0; i < business.getOrderDirectory().getAllOrders().size(); i++){
+            if(business.getOrderDirectory().getAllOrders().get(i).getId() == orderId){
+                Restaurant res = business.getOrderDirectory().getAllOrders().get(i).getOrderItemList().get(0).getRestaurant();
+                for(int j = 0; j < res.getAllOrders().size(); j++){
+                    if(res.getAllOrders().get(j).getId() == orderId){
+                        res.getAllOrders().get(j).setStatus("Delivered");
+                    }
+                }
+            }
+        }
+        
+        JOptionPane.showMessageDialog(null, "Order Completed!!");
 //        
 //        if (selectedRow < 0){
 //            return;
@@ -175,10 +260,10 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
 //     
 //        request.setStatus("Processing");
 //        
-//        ProcessWorkRequestJPanel processWorkRequestJPanel = new ProcessWorkRequestJPanel(userProcessContainer, request);
-//        userProcessContainer.add("processWorkRequestJPanel", processWorkRequestJPanel);
-//        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-//        layout.next(userProcessContainer);
+//       ProcessWorkRequestJPanel processWorkRequestJPanel = new ProcessWorkRequestJPanel(userProcessContainer, userAccount, business, o.getStatus());
+//       userProcessContainer.add("processWorkRequestJPanel", processWorkRequestJPanel);
+//       CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+//       layout.next(userProcessContainer);
         
     }//GEN-LAST:event_processJButtonActionPerformed
 

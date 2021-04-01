@@ -41,7 +41,7 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
         this.ecosystem = ecosystem;
         this.userAccount = account;
         //valueLabel.setText(enterprise.getName());
-        populateRequestTable();
+        populateAllOrderTable();
         populateRestaurants();
         
         List<Customer> custList = ecosystem.getCustomerDirectory().getCustomerList();
@@ -54,8 +54,25 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
         }
     }
     
-    public void populateRequestTable(){
+    public void populateAllOrderTable(){
+        DefaultTableModel model = (DefaultTableModel) workRequestJTable.getModel();
         
+        model.setRowCount(0);
+        List<Customer> custList = ecosystem.getCustomerDirectory().getCustomerList();
+        
+        for(int i = 0; i < custList.size(); i++){
+            if(custList.get(i).getUsername().equals(userAccount.getUsername())){
+                System.out.println("cust>>>"+ custList.get(i).getAllOrders().size());
+                for(int j = 0; j < custList.get(i).getAllOrders().size(); j++){
+                    model.addRow(new Object[]{
+                        custList.get(i).getAllOrders().get(j).getComment(),
+                        custList.get(i).getAllOrders().get(j).getOrderItemList().get(0).getRestaurant().getRestaurentName(),
+                        custList.get(i).getAllOrders().get(j).getStatus(),
+                        custList.get(i).getAllOrders().get(j).getTotal().toString()
+                    });
+                }
+            }
+        }
     }
 
     
@@ -70,7 +87,6 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         workRequestJTable = new javax.swing.JTable();
-        requestTestJButton = new javax.swing.JButton();
         refreshTestJButton = new javax.swing.JButton();
         enterpriseLabel = new javax.swing.JLabel();
         valueLabel = new javax.swing.JLabel();
@@ -96,7 +112,7 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
                 {null, null, null, null}
             },
             new String [] {
-                "Message", "Receiver", "Status", "Result"
+                "Message", "Restaurant", "Status", "Bill"
             }
         ) {
             Class[] types = new Class [] {
@@ -121,13 +137,6 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
             workRequestJTable.getColumnModel().getColumn(2).setResizable(false);
             workRequestJTable.getColumnModel().getColumn(3).setResizable(false);
         }
-
-        requestTestJButton.setText("Request Test");
-        requestTestJButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                requestTestJButtonActionPerformed(evt);
-            }
-        });
 
         refreshTestJButton.setText("Refresh");
         refreshTestJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -272,10 +281,6 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 106, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(53, 53, 53))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(requestTestJButton)
-                .addGap(211, 211, 211))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -296,9 +301,7 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(46, 46, 46)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(requestTestJButton)
-                .addGap(26, 26, 26)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(itemName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -318,15 +321,9 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void requestTestJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestTestJButtonActionPerformed
-        
-        
-        
-    }//GEN-LAST:event_requestTestJButtonActionPerformed
-
     private void refreshTestJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshTestJButtonActionPerformed
 
-        populateRequestTable();
+        populateAllOrderTable();
         
     }//GEN-LAST:event_refreshTestJButtonActionPerformed
 
@@ -361,13 +358,13 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
 
     private void orderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_orderActionPerformed
         // TODO add your handling code here:
-        List<Customer> custList = ecosystem.getCustomerDirectory().getCustomerList();
-        
-        for(int i = 0; i < custList.size(); i++){
-            if(custList.get(i).getUsername().equals(userAccount.getUsername())){
-                custList.get(i).getAllOrders().add(o);
-            }
-        }
+//        List<Customer> custList = ecosystem.getCustomerDirectory().getCustomerList();
+//        
+//        for(int i = 0; i < custList.size(); i++){
+//            if(custList.get(i).getUsername().equals(userAccount.getUsername())){
+//                System.out.println("oye hoye>>>"+custList.get(i).getAllOrders().size());
+//            }
+//        }
         
         CustomerPlaceOrderJPanel placeOrderJPanel =new CustomerPlaceOrderJPanel(userProcessContainer, userAccount, ecosystem);
         userProcessContainer.add("placeOrderJPanel",placeOrderJPanel);
@@ -419,7 +416,6 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JButton order;
     private javax.swing.JButton refreshTestJButton;
-    private javax.swing.JButton requestTestJButton;
     private javax.swing.JLabel valueLabel;
     private javax.swing.JTable workRequestJTable;
     // End of variables declaration//GEN-END:variables

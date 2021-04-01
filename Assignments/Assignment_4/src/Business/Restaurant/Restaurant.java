@@ -21,6 +21,7 @@ public class Restaurant {
     String restaurentName;
     Employee restaurantManager;
     String address;
+    int number = 1231231234;
     Map<String, Double> menuMap;
     List<Order> allOrders;
 
@@ -75,6 +76,14 @@ public class Restaurant {
 
     public void setAllOrders(List<Order> allOrders) {
         this.allOrders = allOrders;
+    }
+
+    public int getNumber() {
+        return number;
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
     }
     
         
