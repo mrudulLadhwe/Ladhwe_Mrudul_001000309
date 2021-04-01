@@ -6,7 +6,9 @@
 package Business.Order;
 
 import Business.Restaurant.Restaurant;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -15,28 +17,27 @@ import java.util.Map;
  */
 public class Order {
     
-    Restaurant restaurant;
-    Map<String, Double> orderMap;
+    List<OrderItem> orderItemList;
+    String status;
 
-    public Order(Restaurant restaurant) {
-        this.restaurant = restaurant;
-        orderMap = new HashMap<String, Double>();
+    public Order() {
+        orderItemList = new ArrayList<OrderItem>();
     }
 
-    public Restaurant getRestaurant() {
-        return restaurant;
+    public List<OrderItem> getOrderItemList() {
+        return orderItemList;
     }
 
-    public void setRestaurant(Restaurant restaurant) {
-        this.restaurant = restaurant;
+    public void setOrderItemList(List<OrderItem> orderItemList) {
+        this.orderItemList = orderItemList;
     }
 
-    public Map<String, Double> getOrderMap() {
-        return orderMap;
+    public String getStatus() {
+        return status;
     }
 
-    public void setOrderMap(Map<String, Double> orderMap) {
-        this.orderMap = orderMap;
+    public void setStatus(String status) {
+        this.status = status;
     }
     
     

@@ -4,7 +4,10 @@
  */
 package userinterface.CustomerRole;
 
+import Business.Customer.Customer;
 import Business.EcoSystem;
+import Business.Order.Order;
+import Business.Order.OrderItem;
 import Business.Restaurant.Restaurant;
 
 import Business.UserAccount.UserAccount;
@@ -26,6 +29,8 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
     private JPanel userProcessContainer;
     EcoSystem ecosystem;
     private UserAccount userAccount;
+    String res;
+    Order o;
     /**
      * Creates new form DoctorWorkAreaJPanel
      */
@@ -38,6 +43,14 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
         //valueLabel.setText(enterprise.getName());
         populateRequestTable();
         populateRestaurants();
+        
+        List<Customer> custList = ecosystem.getCustomerDirectory().getCustomerList();
+        
+        for(int i = 0; i < custList.size(); i++){
+            if(custList.get(i).getUsername().equals(userAccount.getUsername())){
+                o = custList.get(i).newOrder();
+            }
+        }
     }
     
     public void populateRequestTable(){
@@ -65,6 +78,14 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
         jScrollPane3 = new javax.swing.JScrollPane();
         MenuTable = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
+        order = new javax.swing.JButton();
+        AddToCart = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        itemName = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        PricejTextField1 = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        Quantity = new javax.swing.JTextField();
 
         workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -164,6 +185,11 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
                 return types [columnIndex];
             }
         });
+        MenuTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MenuTableMouseClicked(evt);
+            }
+        });
         jScrollPane3.setViewportView(MenuTable);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 102));
@@ -179,6 +205,32 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
             .addGap(0, 52, Short.MAX_VALUE)
         );
 
+        order.setText("Place Order");
+        order.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                orderActionPerformed(evt);
+            }
+        });
+
+        AddToCart.setText("Add To Cart");
+        AddToCart.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddToCartActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Item Name: ");
+
+        jLabel2.setText("Price: ");
+
+        jLabel3.setText("Quantity:");
+
+        Quantity.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                QuantityActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -186,45 +238,82 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addComponent(enterpriseLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(valueLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(refreshTestJButton)
                 .addGap(73, 73, 73))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGap(116, 116, 116)
+                .addGap(137, 137, 137)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(83, 83, 83)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel1))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(itemName)
+                            .addComponent(PricejTextField1)
+                            .addComponent(Quantity, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(83, 83, 83)
-                        .addComponent(requestTestJButton)))
-                .addGap(103, 236, Short.MAX_VALUE))
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(48, 48, 48)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(order, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(AddToCart))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(49, 49, 49)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 106, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(53, 53, 53))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(requestTestJButton)
+                .addGap(211, 211, 211))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(54, 54, 54)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(enterpriseLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(enterpriseLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(valueLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(refreshTestJButton))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                        .addGap(44, 44, 44)
+                        .addGap(62, 62, 62)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(requestTestJButton)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(valueLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(2, 2, 2))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(46, 46, 46)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(requestTestJButton)
+                .addGap(26, 26, 26)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(itemName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PricejTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Quantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29)
+                .addComponent(AddToCart)
+                .addGap(26, 26, 26)
+                .addComponent(order)
+                .addGap(147, 147, 147))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -246,7 +335,7 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
         System.out.println("selectedrow>>>>"+index);
         DefaultTableModel model = (DefaultTableModel) RestaurantsTable.getModel();
        // updateName.setText(model.getValueAt(index, 0).toString());
-        String res = model.getValueAt(index, 0).toString();
+        res = model.getValueAt(index, 0).toString();
         DefaultTableModel model2 = (DefaultTableModel) MenuTable.getModel();
         
         
@@ -269,14 +358,65 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_RestaurantsTableMouseClicked
 
+    private void orderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_orderActionPerformed
+        // TODO add your handling code here:
+        List<Customer> custList = ecosystem.getCustomerDirectory().getCustomerList();
+        
+        for(int i = 0; i < custList.size(); i++){
+            if(custList.get(i).getUsername().equals(userAccount.getUsername())){
+                custList.get(i).getAllOrders().add(o);
+            }
+        }
+        
+        CustomerPlaceOrderJPanel placeOrderJPanel =new CustomerPlaceOrderJPanel(userProcessContainer, userAccount, ecosystem);
+        userProcessContainer.add("placeOrderJPanel",placeOrderJPanel);
+        CardLayout layout=(CardLayout)userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+        
+    }//GEN-LAST:event_orderActionPerformed
+
+    private void MenuTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuTableMouseClicked
+        // TODO add your handling code here:
+        int index = MenuTable.getSelectedRow();
+        System.out.println("selectedrow>>>>"+index);
+        DefaultTableModel model = (DefaultTableModel) MenuTable.getModel();
+       // updateName.setText(model.getValueAt(index, 0).toString());
+        itemName.setText(model.getValueAt(index, 0).toString());
+        PricejTextField1.setText(model.getValueAt(index, 1).toString());
+    }//GEN-LAST:event_MenuTableMouseClicked
+
+    private void AddToCartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddToCartActionPerformed
+        // TODO add your handling code here:
+        List<Restaurant> resList = ecosystem.getRestaurantDirectory().getRestaurantList();
+        
+        for(int i = 0; i < resList.size(); i++){
+            if(resList.get(i).getRestaurentName().equals(res)){
+                OrderItem ot = new OrderItem(resList.get(i), itemName.getText(), Double.parseDouble(PricejTextField1.getText()), Integer.parseInt(Quantity.getText()));
+                o.getOrderItemList().add(ot);
+            }
+        }
+    }//GEN-LAST:event_AddToCartActionPerformed
+
+    private void QuantityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QuantityActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_QuantityActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AddToCart;
     private javax.swing.JTable MenuTable;
+    private javax.swing.JTextField PricejTextField1;
+    private javax.swing.JTextField Quantity;
     private javax.swing.JTable RestaurantsTable;
     private javax.swing.JLabel enterpriseLabel;
+    private javax.swing.JTextField itemName;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JButton order;
     private javax.swing.JButton refreshTestJButton;
     private javax.swing.JButton requestTestJButton;
     private javax.swing.JLabel valueLabel;

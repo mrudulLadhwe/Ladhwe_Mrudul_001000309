@@ -4,6 +4,7 @@ import Business.Customer.Customer;
 import Business.Customer.CustomerDirectory;
 import Business.DeliveryMan.DeliveryManDirectory;
 import Business.Employee.Employee;
+import Business.Order.OrderDirectory;
 import Business.Restaurant.RestaurantDirectory;
 import Business.Role.AdminRole;
 import Business.Role.CustomerRole;
@@ -72,6 +73,10 @@ public class ConfigureASystem {
         UserAccount delivery2 = system.getUserAccountDirectory().createUserAccount("dman2", "dman2", del2, new DeliverManRole());
         delivery2.setName(del2.getName());
         dmd.createNewDeliveryMan(delivery2.getName());
+        
+        //order
+        OrderDirectory od = new OrderDirectory();
+        system.setOrderDirectory(od);
         
         return system;
     }

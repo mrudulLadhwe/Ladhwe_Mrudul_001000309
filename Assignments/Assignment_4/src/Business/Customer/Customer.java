@@ -5,6 +5,11 @@
  */
 package Business.Customer;
 
+import Business.Order.Order;
+import Business.Restaurant.Restaurant;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author harold
@@ -15,13 +20,16 @@ public class Customer {
     String username;
     String password;
     int totalOrders = 0;
+    Order currentOrder;
     String address;
+    List<Order> allOrders;
 
     public Customer(String name, String username, String password, String address) {
         this.name = name;
         this.username = username;
         this.password = password;
         this.address = address;
+        allOrders = new ArrayList<Order>();
     }
 
     public String getName() {
@@ -56,8 +64,12 @@ public class Customer {
         this.totalOrders = totalOrders;
     }
 
-    public int newOrder(){
-        return totalOrders+1;
+    public Order newOrder(){
+        Order o = new Order();
+        currentOrder = o;
+        totalOrders++;
+        allOrders.add(o);
+        return o;
     }
 
     public String getAddress() {
@@ -67,8 +79,21 @@ public class Customer {
     public void setAddress(String address) {
         this.address = address;
     }
-    
-    
-    
+
+    public List<Order> getAllOrders() {
+        return allOrders;
+    }
+
+    public void setAllOrders(List<Order> allOrders) {
+        this.allOrders = allOrders;
+    }
+
+    public Order getCurrentOrder() {
+        return currentOrder;
+    }
+
+    public void setCurrentOrder(Order currentOrder) {
+        this.currentOrder = currentOrder;
+    }
     
 }
