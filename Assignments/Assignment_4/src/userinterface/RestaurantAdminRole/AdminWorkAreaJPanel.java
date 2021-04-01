@@ -3,8 +3,11 @@
 package userinterface.RestaurantAdminRole;
 
 
+import Business.EcoSystem;
+import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
+import javax.swing.tree.DefaultTreeModel;
 
 /**
  *
@@ -13,11 +16,15 @@ import javax.swing.JPanel;
 public class AdminWorkAreaJPanel extends javax.swing.JPanel {
     
     JPanel userProcessContainer;
+    EcoSystem ecosystem;
+    UserAccount account;
     
     /** Creates new form AdminWorkAreaJPanel */
-    public AdminWorkAreaJPanel(JPanel userProcessContainer) {
+    public AdminWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, EcoSystem ecosystem) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
+        this.ecosystem = ecosystem;
+        this.account = account;
       
         //valueLabel.setText();
     }
@@ -81,7 +88,10 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_userJButtonActionPerformed
 
     private void manageEmployeeJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageEmployeeJButtonActionPerformed
-
+        ManageMenuJPanel menuJPanel =new ManageMenuJPanel(userProcessContainer, account, ecosystem);
+        userProcessContainer.add("manageMenuJPanel",menuJPanel);
+        CardLayout layout=(CardLayout)userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
     }//GEN-LAST:event_manageEmployeeJButtonActionPerformed
 
     private void manageOrganizationJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageOrganizationJButtonActionPerformed
@@ -97,5 +107,12 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JButton userJButton;
     private javax.swing.JLabel valueLabel;
     // End of variables declaration//GEN-END:variables
+
+    void populateTree() {
+        //DefaultTreeModel model=(DefaultTreeModel)jTree.getModel();
+       // Add the code for draw your system structure shown by JTree
+       
+        //model.reload();
+    }
     
 }

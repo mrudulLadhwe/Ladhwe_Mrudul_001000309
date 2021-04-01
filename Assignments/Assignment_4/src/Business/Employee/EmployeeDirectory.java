@@ -28,4 +28,14 @@ public class EmployeeDirectory {
         employeeList.add(employee);
         return employee;
     }
+    
+    public Employee searchEmployee(String name){
+        for(int i =0; i < employeeList.size(); i++){
+            if(employeeList.get(i).getName().equals(name)){
+                return employeeList.get(i);
+            }
+        }
+        
+        return null;
+    }
 }

@@ -7,7 +7,9 @@ package Business.Restaurant;
 
 import Business.Employee.Employee;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  *
@@ -18,13 +20,14 @@ public class Restaurant {
     String restaurentName;
     Employee restaurantManager;
     String address;
-    List<String> menu;
+    Map<String, Double> menuMap;
 
     public Restaurant(Employee restaurantManager, String restaurentName, String address) {
         this.restaurantManager = restaurantManager;
         this.restaurentName = restaurentName;
         this.address = address;
-        menu = new ArrayList<String>();
+        menuMap = new HashMap<String, Double>();
+        addMenuItems();
     }
 
     public Employee getRestaurantManager() {
@@ -39,14 +42,18 @@ public class Restaurant {
         return address;
     }
 
-    public List<String> getMenu() {
-        return menu;
+    public Map<String, Double> getMenuMap() {
+        return menuMap;
     }
 
-    public void setMenu(List<String> menu) {
-        this.menu = menu;
+    public void setMenuMap(Map<String, Double> menuMap) {
+        this.menuMap = menuMap;
     }
 
+    public void addMenuItems(){
+        menuMap.put("Burger", 12.00);
+    }
+    
     public void setRestaurentName(String restaurentName) {
         this.restaurentName = restaurentName;
     }

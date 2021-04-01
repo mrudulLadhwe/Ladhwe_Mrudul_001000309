@@ -47,6 +47,7 @@ public class ConfigureASystem {
         //restaurants
         Employee emp1 = system.getEmployeeDirectory().createEmployee("EMP1");
         UserAccount resManager1 = system.getUserAccountDirectory().createUserAccount("manager1", "manager1", emp1, new AdminRole());
+        emp1.setUsername(resManager1.getUsername());
         resManager1.setName(emp1.getName());
         RestaurantDirectory rd = new RestaurantDirectory();
         rd.createNewRestaurant(emp1, "Vaishali", "FC road Pune");
@@ -54,6 +55,7 @@ public class ConfigureASystem {
         
         Employee emp2 = system.getEmployeeDirectory().createEmployee("EMP2");
         UserAccount resManager2 = system.getUserAccountDirectory().createUserAccount("manager2", "manager2", emp2, new AdminRole());
+        emp2.setUsername(resManager2.getUsername());
         resManager2.setName(emp2.getName());
         rd.createNewRestaurant(emp2, "Wadeshwar", "FC road Pune");
         

@@ -11,6 +11,7 @@ package Business.Employee;
 public class Employee {
     
     private String name;
+    private String username;
     private int id;
     private static int count = 1;
 
@@ -35,6 +36,14 @@ public class Employee {
     @Override
     public String toString() {
         return name;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
     
     

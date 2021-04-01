@@ -34,6 +34,14 @@ public class RestaurantDirectory {
         this.restaurantList = restaurantList;
     }
     
-    
+    public Restaurant searchRestaurant(String name){
+        for(int i = 0; i < restaurantList.size(); i++){
+            if(restaurantList.get(i).getRestaurentName().equals(name)){
+                return restaurantList.get(i);
+            }
+        }
+        
+        return null;
+    }
     
 }

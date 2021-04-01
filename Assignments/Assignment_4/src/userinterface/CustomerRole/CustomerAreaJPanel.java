@@ -5,11 +5,15 @@
 package userinterface.CustomerRole;
 
 import Business.EcoSystem;
+import Business.Restaurant.Restaurant;
 
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.LabTestWorkRequest;
 import Business.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -20,19 +24,20 @@ import javax.swing.table.DefaultTableModel;
 public class CustomerAreaJPanel extends javax.swing.JPanel {
 
     private JPanel userProcessContainer;
-
+    EcoSystem ecosystem;
     private UserAccount userAccount;
     /**
      * Creates new form DoctorWorkAreaJPanel
      */
-    public CustomerAreaJPanel(JPanel userProcessContainer, UserAccount account) {
+    public CustomerAreaJPanel(JPanel userProcessContainer, UserAccount account, EcoSystem ecosystem) {
         initComponents();
         
         this.userProcessContainer = userProcessContainer;
-      
+        this.ecosystem = ecosystem;
         this.userAccount = account;
         //valueLabel.setText(enterprise.getName());
         populateRequestTable();
+        populateRestaurants();
     }
     
     public void populateRequestTable(){
@@ -55,6 +60,11 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
         refreshTestJButton = new javax.swing.JButton();
         enterpriseLabel = new javax.swing.JLabel();
         valueLabel = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        RestaurantsTable = new javax.swing.JTable();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        MenuTable = new javax.swing.JTable();
+        jPanel1 = new javax.swing.JPanel();
 
         workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -109,42 +119,112 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
 
         valueLabel.setText("<value>");
 
+        RestaurantsTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null},
+                {null},
+                {null},
+                {null}
+            },
+            new String [] {
+                "Restaurants"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        RestaurantsTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                RestaurantsTableMouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(RestaurantsTable);
+
+        MenuTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Items", "Price"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane3.setViewportView(MenuTable);
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 102));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 52, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(179, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(165, 165, 165))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(requestTestJButton)
-                        .addGap(86, 86, 86))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(21, 21, 21)
+                .addGap(19, 19, 19)
                 .addComponent(enterpriseLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
+                .addGap(29, 29, 29)
                 .addComponent(valueLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(refreshTestJButton)
-                .addGap(103, 103, 103))
+                .addGap(73, 73, 73))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(116, 116, 116)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(83, 83, 83)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(83, 83, 83)
+                        .addComponent(requestTestJButton)))
+                .addGap(103, 236, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(54, 54, 54)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(valueLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(refreshTestJButton)
-                        .addComponent(enterpriseLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(45, 45, 45)
-                .addComponent(requestTestJButton)
-                .addContainerGap(202, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(enterpriseLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(refreshTestJButton))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                        .addGap(44, 44, 44)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(requestTestJButton)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(valueLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -160,12 +240,59 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
         
     }//GEN-LAST:event_refreshTestJButtonActionPerformed
 
+    private void RestaurantsTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RestaurantsTableMouseClicked
+        // TODO add your handling code here:
+        int index = RestaurantsTable.getSelectedRow();
+        System.out.println("selectedrow>>>>"+index);
+        DefaultTableModel model = (DefaultTableModel) RestaurantsTable.getModel();
+       // updateName.setText(model.getValueAt(index, 0).toString());
+        String res = model.getValueAt(index, 0).toString();
+        DefaultTableModel model2 = (DefaultTableModel) MenuTable.getModel();
+        
+        
+        List<Restaurant> resList = ecosystem.getRestaurantDirectory().getRestaurantList();
+        
+        for(int i = 0; i < resList.size(); i++){
+            if(resList.get(i).getRestaurentName().equals(res)){
+                Map<String, Double> menu = new HashMap<String, Double>();
+                menu = resList.get(i).getMenuMap();
+                
+                model2.setRowCount(0);
+                for( Map.Entry<String, Double> entry : menu.entrySet() ){
+                    model2.addRow(new Object[]{
+                        entry.getKey(),
+                        entry.getValue().toString()
+                    });
+                }
+                
+            }
+        }
+    }//GEN-LAST:event_RestaurantsTableMouseClicked
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable MenuTable;
+    private javax.swing.JTable RestaurantsTable;
     private javax.swing.JLabel enterpriseLabel;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JButton refreshTestJButton;
     private javax.swing.JButton requestTestJButton;
     private javax.swing.JLabel valueLabel;
     private javax.swing.JTable workRequestJTable;
     // End of variables declaration//GEN-END:variables
+
+    private void populateRestaurants() {
+        DefaultTableModel model = (DefaultTableModel) RestaurantsTable.getModel();
+        
+        model.setRowCount(0);
+        List<Restaurant> resList = ecosystem.getRestaurantDirectory().getRestaurantList();
+        
+        for(int i = 0; i < resList.size(); i++){
+            model.addRow(new Object[]{
+                resList.get(i).getRestaurentName()
+                });
+        }
+    }
 }
