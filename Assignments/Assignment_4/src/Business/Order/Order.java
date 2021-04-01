@@ -5,6 +5,7 @@
  */
 package Business.Order;
 
+import Business.Customer.Customer;
 import Business.Restaurant.Restaurant;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -17,8 +18,10 @@ import java.util.Map;
  */
 public class Order {
     
+    Customer customer;
     List<OrderItem> orderItemList;
-    String status;
+    String status = "Pending";
+    Double total;
 
     public Order() {
         orderItemList = new ArrayList<OrderItem>();
@@ -38,6 +41,22 @@ public class Order {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
+    public Double getTotal() {
+        return total;
+    }
+
+    public void setTotal(Double total) {
+        this.total = total;
     }
     
     

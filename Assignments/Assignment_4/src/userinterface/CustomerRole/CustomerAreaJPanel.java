@@ -49,6 +49,7 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
         for(int i = 0; i < custList.size(); i++){
             if(custList.get(i).getUsername().equals(userAccount.getUsername())){
                 o = custList.get(i).newOrder();
+                o.setCustomer(custList.get(i));
             }
         }
     }

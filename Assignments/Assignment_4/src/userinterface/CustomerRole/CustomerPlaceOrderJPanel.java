@@ -225,10 +225,12 @@ public class CustomerPlaceOrderJPanel extends javax.swing.JPanel {
         for(int i = 0; i < custList.size(); i++){
           if(custList.get(i).getUsername().equals(userAccount.getUsername())){
                 order = custList.get(i).getCurrentOrder();
+                custList.get(i).getCurrentOrder().setTotal(total);
             }
         }
         
         order.getOrderItemList().get(0).getRestaurant().getAllOrders().add(order);
+        ecosystem.getOrderDirectory().getAllOrders().add(order);
         
         JOptionPane.showMessageDialog(null, "Your Order is Placed!");
     }//GEN-LAST:event_jButton2ActionPerformed

@@ -5,6 +5,10 @@
  */
 package Business.DeliveryMan;
 
+import Business.Order.Order;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author harold
@@ -12,9 +16,11 @@ package Business.DeliveryMan;
 public class DeliveryMan {
     
     String name;
+    List<Order> orderList;
 
     public DeliveryMan(String name) {
         this.name = name;
+        orderList = new ArrayList<>();
     }
 
     public String getName() {
@@ -24,5 +30,14 @@ public class DeliveryMan {
     public void setName(String name) {
         this.name = name;
     }
+
+    public List<Order> getOrderList() {
+        return orderList;
+    }
+
+    public void setOrderList(List<Order> orderList) {
+        this.orderList = orderList;
+    }
+    
     
 }
