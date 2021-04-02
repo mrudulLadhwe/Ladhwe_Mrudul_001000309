@@ -11,6 +11,7 @@ import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Component;
 import java.util.List;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -180,6 +181,8 @@ public class ManageRestaurantInfoJPanel extends javax.swing.JPanel {
                 resList.get(i).setNumber(Integer.parseInt(PhonejTextField.getText()));
             }
         }
+        
+        JOptionPane.showMessageDialog(null, "Restaurant Info Updated");
     }//GEN-LAST:event_jButton2ActionPerformed
 
 

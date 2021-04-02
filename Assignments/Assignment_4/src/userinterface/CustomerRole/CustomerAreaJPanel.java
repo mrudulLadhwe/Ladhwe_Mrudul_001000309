@@ -17,6 +17,7 @@ import java.awt.CardLayout;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -414,6 +415,8 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
                 o.getOrderItemList().add(ot);
             }
         }
+        
+        JOptionPane.showMessageDialog(null, "Item added to Cart");
     }//GEN-LAST:event_AddToCartActionPerformed
 
     private void QuantityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QuantityActionPerformed
