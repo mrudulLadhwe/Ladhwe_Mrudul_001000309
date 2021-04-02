@@ -5,11 +5,15 @@
  */
 package userinterface.SystemAdminWorkArea;
 
+import Business.Customer.Customer;
+import Business.DeliveryMan.DeliveryMan;
 import Business.EcoSystem;
 
 import Business.Organization;
+import Business.Restaurant.Restaurant;
 import java.awt.CardLayout;
 import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JPanel;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
@@ -35,6 +39,46 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
     public void populateTree(){
         DefaultTreeModel model=(DefaultTreeModel)jTree.getModel();
        // Add the code for draw your system structure shown by JTree
+       
+       List<Restaurant> resList = ecosystem.getRestaurantDirectory().getRestaurantList();
+       List<Customer> custList = ecosystem.getCustomerDirectory().getCustomerList();
+       List<DeliveryMan> deliveryList = ecosystem.getDeliveryManDirectory().getDeliveryManList();
+       
+       Restaurant res;
+       Customer cust;
+       DeliveryMan del;
+       
+       DefaultMutableTreeNode restaurants = new DefaultMutableTreeNode("Restaurants");
+       DefaultMutableTreeNode customers = new DefaultMutableTreeNode("Customers");
+       DefaultMutableTreeNode deliveryMen =new DefaultMutableTreeNode("DeliveryMen");
+       DefaultMutableTreeNode root = (DefaultMutableTreeNode)model.getRoot();
+       
+        root.removeAllChildren();
+        root.insert(restaurants, 0);
+        root.insert(customers, 1);
+        root.insert(deliveryMen, 2);
+        
+        DefaultMutableTreeNode resNode;
+        DefaultMutableTreeNode custNode;
+        DefaultMutableTreeNode delNode;
+        
+        for(int i=0;i<resList.size();i++){
+            res = resList.get(i);
+            resNode = new DefaultMutableTreeNode(res.getRestaurentName());
+            restaurants.insert(resNode, i);
+        }
+        
+        for(int i=0 ;i<custList.size(); i++){
+            cust = custList.get(i);
+            custNode = new DefaultMutableTreeNode(cust.getName());
+            customers.insert(custNode, i);
+        }
+        
+        for(int i=0;i < deliveryList.size();i++){
+            del = deliveryList.get(i);
+            delNode = new DefaultMutableTreeNode(del.getName());
+            deliveryMen.insert(delNode, i);
+        }
        
         model.reload();
     }

@@ -13,6 +13,7 @@ import Business.EcoSystem;
 import Business.Employee.Employee;
 import Business.Employee.EmployeeDirectory;
 import Business.Role.AdminRole;
+import Business.Role.DeliverManRole;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Component;
@@ -161,7 +162,7 @@ public class ManageDeliveryManJPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel12.setText("Username :");
+        jLabel12.setText("Name :");
 
         Delete.setBackground(new java.awt.Color(51, 51, 51));
         Delete.setForeground(new java.awt.Color(255, 255, 255));
@@ -316,6 +317,8 @@ public class ManageDeliveryManJPanel extends javax.swing.JPanel {
 
         usernameToUpdate = updateUsername.getText();
         updateUsername.setEditable(false);
+        
+        
     }//GEN-LAST:event_customerTableMouseClicked
 
     private void CreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreateActionPerformed
@@ -355,7 +358,8 @@ public class ManageDeliveryManJPanel extends javax.swing.JPanel {
         if(flag == false){
 
         Employee del2 = ecosystem.getEmployeeDirectory().createEmployee(createName.getText());
-        ecosystem.getUserAccountDirectory().createUserAccount(createUsername.getText(), createPassword.getText(), del2, new AdminRole());
+        UserAccount deliveryacc = ecosystem.getUserAccountDirectory().createUserAccount(createUsername.getText(), createPassword.getText(), del2, new AdminRole());
+        deliveryacc.setName(del2.getName());
         ecosystem.getDeliveryManDirectory().createNewDeliveryMan(del2.getName());
 
         DefaultTableModel model = (DefaultTableModel) customerTable.getModel();
@@ -465,12 +469,15 @@ public class ManageDeliveryManJPanel extends javax.swing.JPanel {
         if(flag == false){
             JOptionPane.showMessageDialog(null, "Invalid User");
         }
-
+        
+        if(flag == true){
         List<UserAccount> uList = ecosystem.getUserAccountDirectory().getUserAccountList();
+        System.out.println("listsize>>>"+uList.size());
         for(int i = 0; i < uList.size(); i++){
             if(uList.get(i).getName().equals(deletedeliveryMan)){
                 uList.remove(i);
             }
+        }
         }
 
         if(flag == true){
