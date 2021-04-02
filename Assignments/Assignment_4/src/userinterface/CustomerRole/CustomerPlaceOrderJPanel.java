@@ -122,7 +122,7 @@ public class CustomerPlaceOrderJPanel extends javax.swing.JPanel {
 
         jLabel1.setText("Total:");
 
-        jButton2.setBackground(new java.awt.Color(102, 102, 102));
+        jButton2.setBackground(new java.awt.Color(51, 51, 51));
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Confirm Order");
         jButton2.addActionListener(new java.awt.event.ActionListener() {

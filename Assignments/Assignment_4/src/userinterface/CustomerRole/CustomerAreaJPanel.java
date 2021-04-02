@@ -417,6 +417,9 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
         }
         
         JOptionPane.showMessageDialog(null, "Item added to Cart");
+        itemName.setText("");
+        PricejTextField1.setText("");
+        Quantity.setText("");
     }//GEN-LAST:event_AddToCartActionPerformed
 
     private void QuantityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QuantityActionPerformed

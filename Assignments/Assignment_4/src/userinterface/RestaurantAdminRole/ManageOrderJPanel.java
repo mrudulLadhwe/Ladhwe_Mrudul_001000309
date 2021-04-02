@@ -35,6 +35,7 @@ public class ManageOrderJPanel extends javax.swing.JPanel {
     Customer customer;
     int index;
     DeliveryMan dm;
+    int orderId;
     
     public ManageOrderJPanel(JPanel userProcessContainer, UserAccount account, EcoSystem ecosystem) {
         initComponents();
@@ -96,17 +97,17 @@ public class ManageOrderJPanel extends javax.swing.JPanel {
 
         customerTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Customer Name", "Customer Address", "Total", "Status", "Message"
+                "Order Id", "Customer Name", "Customer Address", "Total", "Status", "Message"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -194,9 +195,9 @@ public class ManageOrderJPanel extends javax.swing.JPanel {
                 .addComponent(jButton1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 132, Short.MAX_VALUE)
+                .addGap(0, 143, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 595, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(135, Short.MAX_VALUE))
+                .addContainerGap(124, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -223,12 +224,38 @@ public class ManageOrderJPanel extends javax.swing.JPanel {
 
     private void customerTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_customerTableMouseClicked
         // TODO add your handling code here:
+        boolean flag = false;
         index = customerTable.getSelectedRow();
         DefaultTableModel model = (DefaultTableModel) customerTable.getModel();
-        orderStatus.setText(model.getValueAt(index, 3).toString());
+        orderStatus.setText(model.getValueAt(index, 4).toString());
         customer = res.getAllOrders().get(index).getCustomer();
+        orderId = Integer.parseInt(model.getValueAt(index, 0).toString());
         
-        jComboBox1.setEnabled(true);
+        List<Order> orderslist = ecosystem.getOrderDirectory().getAllOrders();
+        for(int i = 0; i < orderslist.size(); i++){
+            if(orderslist.get(i).getId() == orderId){
+                String orderStatus = orderslist.get(i).getStatus();
+                if(orderStatus.equals("Delivered")){
+                    flag = true;
+                    ViewOrder.setEnabled(false);
+                    Accept.setEnabled(false);
+                    Reject.setEnabled(false);
+                }else if(orderStatus.equals("Accepted")){
+                    Accept.setEnabled(false);
+                }else if(orderStatus.equals("Rejected")){
+                    Reject.setEnabled(false);
+                    flag = true;
+                }else if(orderStatus.equals("Order Pick Up")){
+                    Accept.setEnabled(false);
+                    Reject.setEnabled(false);
+                    flag = true;
+                }
+            }
+        }
+        
+        if(flag == false){
+            jComboBox1.setEnabled(true);
+        }
     }//GEN-LAST:event_customerTableMouseClicked
 
     private void AcceptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AcceptActionPerformed
@@ -332,6 +359,7 @@ public class ManageOrderJPanel extends javax.swing.JPanel {
         for(int i = 0; i < orderList.size(); i++){
             
             model.addRow(new Object[]{
+               String.valueOf(orderList.get(i).getId()),
                orderList.get(i).getCustomer().getName(),
                orderList.get(i).getCustomer().getAddress(),
                orderList.get(i).getTotal(),

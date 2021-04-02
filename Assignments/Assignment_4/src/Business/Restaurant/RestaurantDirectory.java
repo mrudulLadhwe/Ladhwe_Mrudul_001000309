@@ -21,9 +21,10 @@ public class RestaurantDirectory {
         restaurantList = new ArrayList<Restaurant>();
     }
     
-    public void createNewRestaurant(Employee restaurantManager, String restaurentName, String address){
+    public Restaurant createNewRestaurant(Employee restaurantManager, String restaurentName, String address){
         Restaurant res = new Restaurant(restaurantManager, restaurentName, address);
         restaurantList.add(res);
+        return res;
     }
 
     public List<Restaurant> getRestaurantList() {

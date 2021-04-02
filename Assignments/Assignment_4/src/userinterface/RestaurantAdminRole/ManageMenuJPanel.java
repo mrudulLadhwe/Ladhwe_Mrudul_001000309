@@ -287,6 +287,8 @@ public class ManageMenuJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) customerTable.getModel();
         updateName.setText(model.getValueAt(index, 0).toString());
         updateUsername.setText(model.getValueAt(index, 1).toString());
+        
+        updateName.setEditable(false);
     }//GEN-LAST:event_customerTableMouseClicked
 
     private void CreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreateActionPerformed

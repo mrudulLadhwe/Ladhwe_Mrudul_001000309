@@ -31,6 +31,7 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
     Customer c;
     int orderId;
     Order o;
+    int index;
     
     /**
      * Creates new form LabAssistantWorkAreaJPanel
@@ -44,6 +45,8 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
       
         
         populateTable();
+        assignJButton.setEnabled(false);
+        processJButton.setEnabled(false);
     }
     
     public void populateTable(){
@@ -57,6 +60,7 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
                 for(int j = 0; j < delList.get(i).getOrderList().size(); j++){
                     System.out.println("id>>>>"+delList.get(i).getOrderList().get(j).getId());
                     model.addRow(new Object[]{
+                    String.valueOf(delList.get(i).getOrderList().get(j).getId()),
                     delList.get(i).getOrderList().get(j).getComment(),
                     delList.get(i).getOrderList().get(j).getOrderItemList().get(0).getRestaurant().getRestaurentName(),
                     delList.get(i).getOrderList().get(j).getCustomer().getName(),
@@ -89,37 +93,29 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
 
         workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Message", "Sender", "Receiver", "Status"
+                "Order Id", "Message", "Sender", "Receiver", "Status"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, true, true, false
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
+        });
+        workRequestJTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                workRequestJTableMouseClicked(evt);
             }
         });
         jScrollPane1.setViewportView(workRequestJTable);
-        if (workRequestJTable.getColumnModel().getColumnCount() > 0) {
-            workRequestJTable.getColumnModel().getColumn(0).setResizable(false);
-            workRequestJTable.getColumnModel().getColumn(1).setResizable(false);
-            workRequestJTable.getColumnModel().getColumn(2).setResizable(false);
-            workRequestJTable.getColumnModel().getColumn(3).setResizable(false);
-        }
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 810, 300));
 
@@ -175,7 +171,7 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
                         delList.get(i).getOrderList().get(j).setStatus("Order Pick Up");
                         orderId = delList.get(i).getOrderList().get(j).getId();
                         if(selectedRow >= 0){
-                            model.setValueAt(delList.get(i).getOrderList().get(j).getStatus(), selectedRow, 3);
+                            model.setValueAt(delList.get(i).getOrderList().get(j).getStatus(), selectedRow, 4);
                         }
                     }
                 }
@@ -282,6 +278,27 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
     private void refreshJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshJButtonActionPerformed
         populateTable();
     }//GEN-LAST:event_refreshJButtonActionPerformed
+
+    private void workRequestJTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_workRequestJTableMouseClicked
+        // TODO add your handling code here:
+        boolean flag = false;
+        index = workRequestJTable.getSelectedRow();
+        DefaultTableModel model = (DefaultTableModel) workRequestJTable.getModel();
+        orderId = Integer.parseInt(model.getValueAt(index, 0).toString());
+        
+        List<Order> orderslist = business.getOrderDirectory().getAllOrders();
+        for(int i = 0; i < orderslist.size(); i++){
+            if(orderslist.get(i).getId() == orderId){
+                String orderStatus = orderslist.get(i).getStatus();
+                if(orderStatus.equals("Preparing Food")){
+                    flag = true;
+                    assignJButton.setEnabled(true);
+                }else if(orderStatus.equals("Order Pick Up")){
+                    processJButton.setEnabled(true);
+                }
+            }
+        }
+    }//GEN-LAST:event_workRequestJTableMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton assignJButton;
