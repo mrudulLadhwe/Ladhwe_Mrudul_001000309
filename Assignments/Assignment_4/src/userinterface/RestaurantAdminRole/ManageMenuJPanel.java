@@ -13,6 +13,7 @@ import java.awt.Component;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Matcher;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -49,8 +50,8 @@ public class ManageMenuJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         customerTable = new javax.swing.JTable();
         InsertCustomer = new javax.swing.JLabel();
@@ -71,21 +72,27 @@ public class ManageMenuJPanel extends javax.swing.JPanel {
         jLabel6 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(234, 232, 232));
+
+        jPanel1.setBackground(new java.awt.Color(97, 94, 94));
+
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Manage Menu");
-
-        jPanel1.setBackground(new java.awt.Color(0, 255, 255));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         customerTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -120,6 +127,8 @@ public class ManageMenuJPanel extends javax.swing.JPanel {
 
         jLabel3.setText("Price:");
 
+        Create.setBackground(new java.awt.Color(51, 51, 51));
+        Create.setForeground(new java.awt.Color(255, 255, 255));
         Create.setText("Create");
         Create.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -133,6 +142,8 @@ public class ManageMenuJPanel extends javax.swing.JPanel {
 
         jLabel10.setText("Price:");
 
+        Create1.setBackground(new java.awt.Color(51, 51, 51));
+        Create1.setForeground(new java.awt.Color(255, 255, 255));
         Create1.setText("Update");
         Create1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -142,6 +153,8 @@ public class ManageMenuJPanel extends javax.swing.JPanel {
 
         jLabel12.setText("Item Name:");
 
+        Delete.setBackground(new java.awt.Color(51, 51, 51));
+        Delete.setForeground(new java.awt.Color(255, 255, 255));
         Delete.setText("Delete");
         Delete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -162,7 +175,6 @@ public class ManageMenuJPanel extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -170,23 +182,24 @@ public class ManageMenuJPanel extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(91, 91, 91)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
-                                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(createName)
-                                            .addComponent(createUsername, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)))
-                                    .addComponent(InsertCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(54, 54, 54))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+                                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(createName)
+                                    .addComponent(createUsername, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE))
+                                .addGap(87, 87, 87))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addContainerGap()
-                                .addComponent(Create)
-                                .addGap(132, 132, 132)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(Create)
+                                        .addGap(132, 132, 132))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(InsertCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(71, 71, 71)))))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -196,8 +209,11 @@ public class ManageMenuJPanel extends javax.swing.JPanel {
                                     .addComponent(Create1)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(updateName)
-                                        .addComponent(updateUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addGap(29, 29, 29)
+                                        .addComponent(updateUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(39, 39, 39)
+                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 6, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -208,28 +224,29 @@ public class ManageMenuJPanel extends javax.swing.JPanel {
                                     .addComponent(updateName1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(9, 9, 9))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
+                        .addContainerGap()
                         .addComponent(jButton1)
-                        .addGap(47, 47, 47)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 478, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(251, 251, 251))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(255, 255, 255)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 541, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
-                .addGap(50, 50, 50)
+                .addComponent(jButton1)
+                .addGap(12, 12, 12)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(InsertCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -260,7 +277,7 @@ public class ManageMenuJPanel extends javax.swing.JPanel {
                             .addComponent(updateName1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(26, 26, 26)
                         .addComponent(Delete)))
-                .addContainerGap(81, Short.MAX_VALUE))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -274,7 +291,23 @@ public class ManageMenuJPanel extends javax.swing.JPanel {
 
     private void CreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreateActionPerformed
         // TODO add your handling code here:
+        try{
+        boolean flag = false;
+//        
+//        if(createName.getText().isEmpty() || createName.getText().isEmpty()){
+//            flag = true;
+//            JOptionPane.showMessageDialog(null, "Please enter all fields");
+//        }
         
+        String pattern = "^(\\d*\\.)?\\d+$";
+        java.util.regex.Pattern r = java.util.regex.Pattern.compile(pattern);
+        Matcher m = r.matcher(createUsername.getText());
+        if ((!m.find()) && ((!createName.getText().isEmpty()) && (!createUsername.getText().isEmpty()))) {
+            flag = true;
+            JOptionPane.showMessageDialog(null, "Please enter Valid data");
+        }
+        
+        if(flag == false){
         List<Restaurant> resList = ecosystem.getRestaurantDirectory().getRestaurantList();
         
         for(int i = 0; i < resList.size(); i++){
@@ -294,11 +327,27 @@ public class ManageMenuJPanel extends javax.swing.JPanel {
 
         createName.setText("");
         createUsername.setText("");
+        flag = false;
+        }
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Please enter all fields");
+        }
     }//GEN-LAST:event_CreateActionPerformed
 
     private void Create1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Create1ActionPerformed
         // TODO add your handling code here:
+        try{
+            boolean flag = false;
+            
+            String pattern = "^(\\d*\\.)?\\d+$";
+            java.util.regex.Pattern r = java.util.regex.Pattern.compile(pattern);
+            Matcher m = r.matcher(updateUsername.getText());
+            if ((!m.find()) && ((!updateName.getText().isEmpty()) && (!updateUsername.getText().isEmpty()))) {
+                flag = true;
+                JOptionPane.showMessageDialog(null, "Please enter Valid data");
+            }
         
+        if(flag == false){
         List<Restaurant> resList = ecosystem.getRestaurantDirectory().getRestaurantList();
         
         for(int i = 0; i < resList.size(); i++){
@@ -322,6 +371,11 @@ public class ManageMenuJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Item Updated!!");
         }else{
             JOptionPane.showMessageDialog(null, "Error");
+        }
+        flag = false;
+        }
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Please enter all fields");
         }
     }//GEN-LAST:event_Create1ActionPerformed
 

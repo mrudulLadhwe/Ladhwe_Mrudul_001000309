@@ -82,7 +82,9 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
         processJButton = new javax.swing.JButton();
         refreshJButton = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(234, 232, 232));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -119,23 +121,27 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
             workRequestJTable.getColumnModel().getColumn(3).setResizable(false);
         }
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 730, 300));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 810, 300));
 
+        assignJButton.setBackground(new java.awt.Color(51, 51, 51));
+        assignJButton.setForeground(new java.awt.Color(255, 255, 255));
         assignJButton.setText("Assign to me");
         assignJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 assignJButtonActionPerformed(evt);
             }
         });
-        add(assignJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 450, -1, -1));
+        add(assignJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 460, -1, -1));
 
+        processJButton.setBackground(new java.awt.Color(51, 51, 51));
+        processJButton.setForeground(new java.awt.Color(255, 255, 255));
         processJButton.setText("Process");
         processJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 processJButtonActionPerformed(evt);
             }
         });
-        add(processJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 450, -1, -1));
+        add(processJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 460, 90, -1));
 
         refreshJButton.setText("Refresh");
         refreshJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -143,9 +149,15 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
                 refreshJButtonActionPerformed(evt);
             }
         });
-        add(refreshJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 90, -1, -1));
+        add(refreshJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 60, -1, -1));
 
-        jPanel1.setBackground(new java.awt.Color(102, 255, 102));
+        jPanel1.setBackground(new java.awt.Color(97, 94, 94));
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("My Home");
+        jPanel1.add(jLabel1);
+
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1140, 50));
     }// </editor-fold>//GEN-END:initComponents
 
@@ -273,6 +285,7 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton assignJButton;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton processJButton;
